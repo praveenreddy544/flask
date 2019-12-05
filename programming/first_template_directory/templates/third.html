@@ -1,0 +1,42 @@
+<!---keep_trailing_newline=True--->
+<h1>Weather Averages</h1>
+<h2>{{ city }}</h2>
+<hr>
+<hr>
+<hr>
+<table>
+    <tr bgcolor="red">
+        <th>Month</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Rainfall</th>
+    </tr>
+    {% for i in given_months %}
+    <tr>
+        <td>{{ i }}</td>
+        <td>
+            {% set ht = weather_var[i]['min'] <= highlight_this['min']  %}
+            {% if ht %}<b>{% endif %}
+                {{ weather_var[i]['min'] }}
+                {% if ht %}</b>{% endif %}
+        </td>
+        
+        <td>
+            {% set ht = weather_var[i]['max'] <= highlight_this['max']  %}
+            {% if ht %}<b>{% endif %}
+                {{ weather_var[i]['max'] }}
+                {% if ht %}</b>{% endif %}
+        </td>
+        
+        <td>
+            {% set ht = weather_var[i]['rain'] <= highlight_this['rain']  %}
+            {% if ht %}<b>{% endif %}
+                {{ weather_var[i]['rain'] }}
+                {% if ht %}</b>{% endif %}
+        </td>
+      <!---  <td>{{ weather_var[i]['min'] }}</td>
+        <td>{{ weather_var[i]['max'] }}</td>
+        <td>{{ weather_var[i]['rain'] }}</td>--->
+    </tr>
+    {% endfor %}
+</table>
