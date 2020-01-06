@@ -2,6 +2,7 @@ from flask import Flask
 simpleapp = Flask(__name__)
 simpleapp.debug = True
 
+
 @simpleapp.route('/')
 @simpleapp.route('/data')
 
@@ -18,15 +19,9 @@ def index():
 def user_profile(id):
     return "Profile page of user #{}".format(id)
 
-'''def wr():
-   a=12
-   b=15
-   c=a+b
-   print(f"{c}")'''
-
 @simpleapp.route('/wr/')
 def wr():
-   return "chintu data"
+   return "returnign data"
 
 if __name__ == "__main__":
 #if __name__ == "__first__":
