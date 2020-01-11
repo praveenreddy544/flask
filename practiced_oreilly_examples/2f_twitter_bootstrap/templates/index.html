@@ -1,0 +1,34 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macrr %}
+
+{% block title %} Weatheeeeer Averages for {{ city }}{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#">Weather</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+    <h1> Weather averages</h1>
+    <h2>{{ city }}</h2>
+    <table class="table table-hover">
+    <tr>
+        <th>Month</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Rainfall</th>
+    </tr>
+    {% for i  in months %}
+     {{ macrr.other_way_to_retrieve_weather_row(i,weather[i]['min'],weather[i]['max'],weather[i]['rain'],highlighted['min'],highlighted['max'],highlighted['rain']) }}
+     {% endfor %}
+        
+</table>
+</div>
+{% endblock %}
+
+52.227.142.174
+10.2.2.6

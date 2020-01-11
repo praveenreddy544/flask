@@ -1,0 +1,16 @@
+{% import 'macros.html' as macrr %}
+<h1> Weather Averagges </h1>
+<h2>{{ city }}</h2>
+<hr>
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Rainfall</th>
+    </tr>
+    {% for i  in months %}
+     {{ macrr.other_way_to_retrieve_weather_row(i,weather[i]['min'],weather[i]['max'],weather[i]['rain'],highlighted['min'],highlighted['max'],highlighted['rain']) }}
+     {% endfor %}
+        
+</table>

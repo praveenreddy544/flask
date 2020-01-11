@@ -1,0 +1,37 @@
+{% import 'test.html' %}
+<h1> weather averages</h1>
+<h2>Weather details for {{ city }} </h2>
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Rain</th>
+    </tr>
+    {% for i in months %}
+    <tr>
+        <td>{{ i }}</td>
+        <td>
+            {# Below block is an example where we are using set to define a value to hold comparision result and perform templating #}
+            {% set val=weather[i]['min'] >= highlighted['min'] %} 
+            {% if val %}<b>{% endif %}
+            {{ weather[i]['min'] }}
+            {% if val %}</b>{% endif %}
+        </td>
+           
+        <td>
+            {# Below is block where we directly use if comparision to evalute and execute state accordingly. I prefer this approach well as its easy to understand #}
+            {% if weather[i]['max'] >= highlighted['max'] %}
+            <b>{{ weather[i]['max'] }}</b>
+            {% else %}
+            {{ weather[i]['max'] }}
+            {% endif %}
+        </td>
+        <!---<td>{{ weather[i]['min'] }}</td>
+        <td>{{ weather[i]['max'] }}</td>-->
+        <td>{{ weather[i]['rain'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% set varname='data' %}
+<h1>"Data being returned is {{ varname }}"</h1>

@@ -1,0 +1,24 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}Forms Demo {% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-inverse" role="navigation">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url_for('disc') }}">Return to homepage</a>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST" action="">
+        what is your name? <input type="text" name="viname">
+        <input type="submit" name="submit" value="hit submit">
+    </form>
+
+    {% if name %}
+    <h1> Welcome {{ name }}</h1>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+<h1> weather averages</h1>
+<h2>Weather details for {{ city }} </h2>
+<table>
+    <tr>
+        <th>Month</th>
+        <th>Min</th>
+        <th>Max</th>
+        <th>Rainfall</th>
+    </tr>
+    {% for mon in months %}
+    <tr>
+        <td>{{ mon }}</td>
+        <td> {{ weather[mon]['min'] }}</td>
+        <td>{{ weather[mon]['max'] }}</td>
+        <td>{{ weather[mon]['rain'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<!--<img src="serving-static-files-flask.png" alt='test'>-->  
+
+<h1>"Ended page"

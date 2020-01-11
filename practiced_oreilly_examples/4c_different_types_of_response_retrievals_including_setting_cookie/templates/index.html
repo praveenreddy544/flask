@@ -1,0 +1,19 @@
+<h1>This page contains HTML</h1>
+<p>
+    {% if 'idm' in request.cookies %}
+    {{ request.cookies['idm']}}
+    {% else %}
+    no cookie set
+    {% endif %}
+</p>
+
+<p><a href="{{ url_for('index') }}">Click to view index page</a></p>
+<p><a href="{{ url_for('text') }}">Click to view plain text</a></p>
+<p><a href="{{ url_for('xml') }}">Click to view xml</a></p>
+<p><a href="{{ url_for('json') }}">Click to view json</a></p>
+<p><a href="{{ url_for('red') }}">Click to view redirected</a></p>
+<p><a href="{{ url_for('cookie') }}">Click to view cookie</a></p>
+<p><a href="{{ url_for('error') }}">Click to view error page</a></p>
+<p><a href="{{ url_for('responsiveness') }}">Click to view responsiveness page</a></p>
+
+
