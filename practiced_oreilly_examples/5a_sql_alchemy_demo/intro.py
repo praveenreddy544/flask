@@ -44,3 +44,5 @@ if __name__ == "__main__":
     print(f"Chintu you test is being executed")
     dbconn.create_all() ##### This creates required table name called as users(you included in that) in provided database
     app.run(debug=True)
+
+    
